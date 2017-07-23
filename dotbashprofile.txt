@@ -1,0 +1,20 @@
+# PS1="joe$" - original BASH Prompt changed to new line and current directory
+PS1="\n\W: "
+
+#ls with -lahG modifier
+alias ll='ls -lahG'
+
+#mkdir and cd into new directory in one command
+#usage - mkdircd subdir
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+#move up multiple directories in a single command
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+
+eval "$(rbenv init -)"
